@@ -1,0 +1,177 @@
+.xonex-diagram-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d1117;
+  display: flex;
+  justify-content: center; /* Center XONEX horizontally */
+  align-items: center; /* Center XONEX vertically */
+  overflow: hidden;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  color: white;
+}
+
+.xonex-center {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-color: #1a1e26;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Adjust XONEX position if needed, currently centered by flexbox */
+  left: 300px; /* Example: adjust to position left of the screen */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.xonex-center h2 {
+  font-size: 2.2em;
+  margin: 0;
+  color: #00bcd4;
+}
+
+.xonex-center p {
+  font-size: 0.9em;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.feature-group {
+  position: absolute;
+  z-index: 5;
+}
+
+.feature-card {
+  width: 100%;
+  min-height: 40px;
+  padding: 2px 20px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: white;
+  text-align: left;
+  cursor: pointer; /* Indicate it's interactive */
+  transition: transform 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translateX(-5px); /* Slight hover effect on card */
+}
+
+.feature-card h5 {
+  font-size: 0.85em;
+  margin: 0;
+  padding-left: 90px;
+}
+
+.feature-card p {
+  font-size: 0.75em;
+  margin-top: 5px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+  padding-left: 90px;
+}
+
+.icon-circle {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* border: 1px solid rgba(255, 255, 255, 0.4); */
+  /* You would add a background image or SVG for the star here */
+}
+
+/* Card specific colors (from previous example) */
+.feature-card[style*="background-color: #4267B2"] .icon-circle {
+  background-color: #4267b2;
+  border-color: #6a8cce;
+}
+.feature-card[style*="background-color: #34A853"] .icon-circle {
+  background-color: #34a853;
+  border-color: #5cb85c;
+}
+.feature-card[style*="background-color: #28a745"] .icon-circle {
+  background-color: #28a745;
+  border-color: #40a040;
+}
+.feature-card[style*="background-color: #6F42C1"] .icon-circle {
+  background-color: #6f42c1;
+  border-color: #8c72cf;
+}
+.feature-card[style*="background-color: #FD7E14"] .icon-circle {
+  background-color: #fd7e14;
+  border-color: #ff9d4d;
+}
+
+/* SVG Styling and Animation */
+.connector-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Below cards, above background */
+  pointer-events: none; /* Allows clicks to pass through to cards */
+}
+
+.connector-svg path {
+  transition:
+    stroke 0.3s ease-in-out,
+    stroke-width 0.3s ease-in-out;
+}
+
+.connector-svg path.animated-line {
+  stroke: #00bcd4; /* Highlight color on hover */
+  stroke-width: 3px; /* Thicker on hover */
+  /* Animation for 'drawing' the line */
+  /* These values are for illustration and need to be calculated based on path length */
+  stroke-dasharray: 1000; /* A value greater than the longest path */
+  stroke-dashoffset: 1000;
+  animation: draw-line 0.8s forwards ease-out;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Specific positioning for the feature cards
+   These are critical for aligning the cards with the SVG paths.
+   Adjust 'top' and 'right' values for each item */
+.feature-group.item1 {
+  top: 20%;
+  right: 10%;
+}
+.feature-group.item2 {
+  top: 35%;
+  right: 10%;
+}
+.feature-group.item3 {
+  top: 50%;
+  right: 10%;
+}
+.feature-group.item4 {
+  top: 65%;
+  right: 10%;
+}
+.feature-group.item5 {
+  top: 80%;
+  right: 10%;
+}
