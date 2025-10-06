@@ -73,7 +73,7 @@ export default function About() {
   };
 
   return (
-    <section className="relative py-8 lg:py-14 bg-[#0a0e1a]">
+    <>
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl animate-pulse"></div>
@@ -190,6 +190,6 @@ export default function About() {
             0 0 0 1px rgba(255, 255, 255, 0.05);
         }
       `}</style>
-    </section>
+    </>
   );
 }

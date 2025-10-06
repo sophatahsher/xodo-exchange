@@ -51,7 +51,7 @@ export default function TradingPartner() {
   }, [isClient]);
 
   return (
-    <section className="px-4 sm:px-6 py-12 sm:py-16 bg-gray-900/50">
+    <>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
@@ -91,9 +91,9 @@ export default function TradingPartner() {
             </div>
 
             {/* Features Grid */}
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-3 sm:space-y-5">
               {/* 小哆NFT Feature Card */}
-              <div className="bg-[#1A1C25] backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300">
+              <div className="bg-[#1A1C25] backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
                   {/* Icon */}
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
@@ -462,6 +462,6 @@ export default function TradingPartner() {
           animation: gradient-xy 3s ease infinite;
         }
       `}</style>
-    </section>
+    </>
   );
 }

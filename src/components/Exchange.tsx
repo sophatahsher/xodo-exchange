@@ -32,7 +32,7 @@ const ExchangeSection: React.FC = () => {
   ];
 
   return (
-    <section className="px-6 py-16 bg-gray-900/50">
+    <>
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl lg:text-5xl font-bold mb-4">
           XONEX Exchange
@@ -139,7 +139,7 @@ const ExchangeSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

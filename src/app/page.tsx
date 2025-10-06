@@ -10,6 +10,10 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TradingPartner from "@/components/TradingPartner";
 import { Banknote, Bitcoin, Mailbox, PiggyBank } from "lucide-react";
+import "../app/styles/menu-animate.css";
+import ScrollToTop from "@/components/utils/ScrollToTop";
+import ScrollToTopCompact from "@/components/utils/ScrollToTopCompact";
+
 
 export default function Home() {
   return (
@@ -18,7 +22,9 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <Banner />
+      <section id="banner" className="relative px-6 py-16 lg:py-24 overflow-hidden">
+        <Banner />
+      </section>
 
       {/* Features Grid */}
       <section className="px-6 py-10 lg:py-10">
@@ -66,7 +72,9 @@ export default function Home() {
       </section>
 
       {/* XONEX Exchange Section */}
-      <ExchangeSection />
+      <section id="exchange" className="px-6 py-16 bg-gray-900/50">
+        <ExchangeSection />
+      </section>
 
       {/* Core Features */}
       <section className="px-6 py-16">
@@ -106,18 +114,28 @@ export default function Home() {
       </section>
 
       {/* XODO AI Section */}
-      <TradingPartner />
+      <section id="ai-trading" className="px-4 sm:px-6 py-12 sm:py-16 bg-gray-900/50">
+        <TradingPartner />
+      </section>
 
       {/* Features Section */}
       {/* <XonexDiagram /> */}
 
-      <About />
+      <section id="about-xonex" className="relative py-8 lg:py-14 bg-[#0a0e1a]">
+        <About />
+      </section>
 
       {/* FAQ Section */}
       <FAQ />
 
       {/* Footer */}
       <Footer />
+
+      {/* Scroll to Top Component */}
+      <ScrollToTop
+        showAfter={300}        // Show after scrolling 300px
+        smoothDuration={1200}  // 1.2 second smooth scroll
+      />
     </div>
   );
 }
